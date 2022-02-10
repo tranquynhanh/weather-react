@@ -87,7 +87,7 @@ export default function Weather() {
                     </div>
 
                     <div className="weather-today">
-                      <img className="fas fa-cloud" src={weather.icon} />
+                      <img className="fas fa-cloud" src={weather.icon} alt='description' />
                       <p>{weather.description}</p>
                     </div>
                     <div className="weather-temperature">
