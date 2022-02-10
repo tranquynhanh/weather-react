@@ -153,6 +153,7 @@ export default function Weather() {
             <div className="card-body">{form}</div>
           </div>
         </div>
+        <a href='https://github.com/tranquynhanh/weather-react' target="_blank" rel="noreferrer">github link</a>
       </div>
     );
   }
