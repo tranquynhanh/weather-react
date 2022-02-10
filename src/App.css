@@ -1,38 +1,131 @@
 .App {
+  font-family: sans-serif;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: sans-serif;
+  margin: 50px auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+form {
   display: flex;
-  flex-direction: column;
+}
+
+#searchCity {
+  flex: 1;
+  margin-right: 5px;
+  border-radius: 5px;
+}
+
+.body {
+  margin: 15px 0;
+  background: radial-gradient(
+    253px at 12.6% 77.9%,
+    rgb(221, 255, 214) 0.3%,
+    rgb(214, 254, 254) 90.5%
+  );
+}
+
+.container-total {
+  width: 600px;
+}
+
+.total {
+  background: linear-gradient(
+    13.6deg,
+    rgb(80, 154, 175) 11.2%,
+    rgb(125, 216, 199) 59.3%,
+    rgb(245, 255, 195) 92.7%
+  );
+}
+
+.card-body-footer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.container-footer {
+  text-align: center;
+}
+
+.weather {
+  font-size: 25px;
+  padding: 5px 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.temp span {
+  margin: 5px 10px;
+  display: inline-block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.weather-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.weather-detail {
+  padding: 8px 0;
+}
+
+.time,
+.date,
+.wind,
+.humid {
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.footer {
+  background: radial-gradient(
+    253px at 12.6% 77.9%,
+    rgb(221, 255, 214) 0.3%,
+    rgb(214, 254, 254) 90.5%
+  );
+}
+
+.weather-today {
+  margin-left: -30px;
+}
+
+.weather-today i {
+  font-size: 120px;
+  text-align: center;
+  margin: 10px 0;
+  color: rgb(48, 157, 207);
+}
+
+.weather-today p {
+  text-align: center;
+}
+
+.weather-temperature {
+  /* flex: 1; */
+  font-size: 36px;
+  align-self: center;
+  text-align: center;
+  position: relative;
+  top: -20px;
+  right: 25px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.weather-temperature span {
+  margin-right: 5px;
+}
+
+.weather-temperature button {
+  border: none;
+  background-color: transparent;
+  font-size: 30px;
+  padding: 0;
+  font-weight: 300;
 }
