@@ -92,7 +92,7 @@ form {
 }
 
 .weather-today {
-  margin-left: -30px;
+  /* margin-left: -30px; */
 }
 
 .weather-today i {
@@ -113,7 +113,7 @@ form {
   text-align: center;
   position: relative;
   top: -20px;
-  right: 25px;
+  right: 0px;
   font-weight: bold;
   margin-left: 20px;
 }
@@ -122,10 +122,11 @@ form {
   margin-right: 5px;
 }
 
-.weather-temperature button {
+.weather-temperature .deg,
+.weather-temperature .far {
   border: none;
   background-color: transparent;
-  font-size: 30px;
+  font-size: 15px;
   padding: 0;
   font-weight: 300;
 }

@@ -1,21 +1,25 @@
 import './App.css';
 import React, { useState } from "react";
 import axios from "axios";
+import WeatherInfo from './WeatherInfo';
+import FormattedDate from './FormattedDate';
 
-export default function Weather() {
+export default function Weather(props) {
   let [city, setCity] = useState("");
   let [loaded, setLoaded] = useState(false);
   let [displayCity, setDisplayCity] = useState("");
-  let [weather, setWeather] = useState({});
+  let [weather, setWeather] = useState({ready: false});
 
   function getData(response) {
+    console.log(response.data.dt)
     setWeather({
-      day: "Tuesday 10:10",
-      date: "10/19/2021",
+      ready: true,
+      date: new Date(response.data.dt * 1000),
+      day: "10/19/2021",
       wind: response.data.wind.speed,
       humid: response.data.main.humidity,
       temperature: response.data.main.temp,
-      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
       description: response.data.weather[0].description
     });
   }
@@ -52,7 +56,7 @@ export default function Weather() {
     </form>
   );
 
-  if (loaded) {
+  if (weather.ready) {
     return (
       <div className="App">
         <div className="container container-total">
@@ -74,32 +78,7 @@ export default function Weather() {
                       </span>
                     </p>
                   </div>
-
-                  <div className="weather-body">
-                    <div className="weather__details">
-                      <p className="time">{weather.day}</p>
-                      <p className="date">{weather.date}</p>
-                      <p className="wind">Wind {weather.wind}km/h</p>
-                      <p className="humid">
-                        <i className="fas fa-tint"></i>
-                        {weather.humid}%
-                      </p>
-                    </div>
-
-                    <div className="weather-today">
-                      <img className="fas fa-cloud" src={weather.icon} alt='description' />
-                      <p>{weather.description}</p>
-                    </div>
-                    <div className="weather-temperature">
-                      <span className="current-temperature">
-                        {weather.temperature}
-                      </span>
-                      <span id="btn-group">
-                        <button className="deg active">°C</button>
-                        {/* <button className="far">°F</button> */}
-                      </span>
-                    </div>
-                  </div>
+                  <WeatherInfo data={weather}/>
                 </div>
               </div>
               <div className="card footer">
