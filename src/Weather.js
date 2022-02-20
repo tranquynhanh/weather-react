@@ -24,7 +24,6 @@ export default function Weather(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    setLoaded(true);
     setDisplayCity(city);
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=7ae73a0fdb9a246291b5e3911d1cd392&units=metric`;
     axios.get(url).then(getData);
