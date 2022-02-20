@@ -2,11 +2,9 @@ import './App.css';
 import React, { useState } from "react";
 import axios from "axios";
 import WeatherInfo from './WeatherInfo';
-import FormattedDate from './FormattedDate';
 
 export default function Weather(props) {
   let [city, setCity] = useState("");
-  let [loaded, setLoaded] = useState(false);
   let [displayCity, setDisplayCity] = useState("");
   let [weather, setWeather] = useState({ready: false});
 
