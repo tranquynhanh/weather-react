@@ -2,6 +2,7 @@ import './App.css';
 import React, { useState } from "react";
 import axios from "axios";
 import WeatherInfo from './WeatherInfo';
+import WeatherForecast from './WeatherForecast';
 
 export default function Weather(props) {
   let [city, setCity] = useState("");
@@ -9,7 +10,6 @@ export default function Weather(props) {
   let [weather, setWeather] = useState({ready: false});
 
   function getData(response) {
-    console.log(response.data.dt)
     setWeather({
       ready: true,
       date: new Date(response.data.dt * 1000),
@@ -18,7 +18,8 @@ export default function Weather(props) {
       humid: response.data.main.humidity,
       temperature: response.data.main.temp,
       icon: response.data.weather[0].icon,
-      description: response.data.weather[0].description
+      description: response.data.weather[0].description,
+      coord: response.data.coord
     });
   }
 
@@ -78,44 +79,7 @@ export default function Weather(props) {
                   <WeatherInfo data={weather}/>
                 </div>
               </div>
-              <div className="card footer">
-                <div className="card-body card-body-footer">
-                  <div className="container-footer">
-                    <strong className="day">WED</strong> <br />
-                    <i className="fas fa-cloud-moon-rain weather"></i>
-                    <br />
-                    <strong className="temperature">25°C</strong>
-                  </div>
-
-                  <div className="container-footer">
-                    <strong className="day">THU</strong> <br />
-                    <i className="fas fa-sun weather"></i>
-                    <br />
-                    <strong className="temperature">27°C</strong>
-                  </div>
-
-                  <div className="container-footer">
-                    <strong className="day">FRI</strong> <br />
-                    <i className="fas fa-cloud-sun-rain weather"></i>
-                    <br />
-                    <strong className="temperature">28°C</strong>
-                  </div>
-
-                  <div className="container-footer">
-                    <strong className="day">SAT</strong> <br />
-                    <i className="fas fa-cloud-moon-rain weather"></i>
-                    <br />
-                    <strong className="temperature">24°C</strong>
-                  </div>
-
-                  <div className="container-footer">
-                    <strong className="day">SUN</strong> <br />
-                    <i className="fas fa-cloud-sun-rain weather"></i>
-                    <br />
-                    <strong className="temperature">30°C</strong>
-                  </div>
-                </div>
-              </div>
+              <WeatherForecast coord={weather.coord} />
             </div>
           </div>
         </div>
