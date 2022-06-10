@@ -36,7 +36,8 @@ export default function Weather(props) {
   }
 
   let form = (
-    <form className="city-input" onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
+      <div className="city-input" id='city-input'>
       <input
         type="search"
         name="search"
@@ -51,6 +52,7 @@ export default function Weather(props) {
         value="Search"
         className="btn btn-success btn-search" id='btn'
       />
+      </div>
     </form>
   );
 
