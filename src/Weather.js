@@ -49,7 +49,7 @@ export default function Weather(props) {
       <input
         type="submit"
         value="Search"
-        className="btn btn-success btn-search"
+        className="btn btn-success btn-search" id='btn'
       />
     </form>
   );
@@ -60,7 +60,7 @@ export default function Weather(props) {
         <div className="container container-total">
           <div className="card total">
             <div className="card-body">
-              {form}
+              {form} 
               <div className="card body">
                 <div className="card-body">
                   <div className="header">

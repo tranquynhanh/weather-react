@@ -5,7 +5,33 @@
 
 body {
   font-family: sans-serif;
-  margin: 50px auto;
+  background: url(./img/AdobeStock_291451528-1-scaled.jpeg);
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: -32%;
+  width: 0;
+  left: 0;
+  bottom: 32%;
+  right: 0;
+  background-color: black;
+}
+
+h1 {
+  font-size: 35px;
+  text-align: center;
+  color: lightcyan;
+  z-index: 6;
+  margin-bottom: 30px;
+}
+
+.container__body {
+  margin-top: 50px;
+  z-index: 2;
 }
 
 form {
@@ -20,24 +46,28 @@ form {
 
 .body {
   margin: 15px 0;
-  background: radial-gradient(
+  /* background: radial-gradient(
     253px at 12.6% 77.9%,
     rgb(221, 255, 214) 0.3%,
     rgb(214, 254, 254) 90.5%
-  );
+  ); */
+  background-color: rgba(172, 79, 79, 0.6);
+  border-color: rgb(172, 79, 79);
 }
 
 .container-total {
-  width: 600px;
+  width: 50%;
 }
 
 .total {
-  background: linear-gradient(
+  /* background: linear-gradient(
     13.6deg,
     rgb(80, 154, 175) 11.2%,
     rgb(125, 216, 199) 59.3%,
     rgb(245, 255, 195) 92.7%
-  );
+  ); */
+  background-color: rgba(172, 79, 79, 0.3);
+  border-color: rgb(172, 79, 79);
 }
 
 .card-body-footer {
@@ -84,11 +114,13 @@ form {
 }
 
 .footer {
-  background: radial-gradient(
+  /* background: radial-gradient(
     253px at 12.6% 77.9%,
     rgb(221, 255, 214) 0.3%,
     rgb(214, 254, 254) 90.5%
-  );
+  ); */
+  background-color: rgba(172, 79, 79, 0.6);
+  border-color: rgb(172, 79, 79);
 }
 
 .weather-today {
@@ -116,6 +148,7 @@ form {
   right: 0px;
   font-weight: bold;
   margin-left: 20px;
+  margin-right: 125px;
 }
 
 .weather-temperature span {
@@ -130,3 +163,92 @@ form {
   padding: 0;
   font-weight: 300;
 }
+
+@media screen and (max-width:1170px) {
+  .weather-temperature {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .container-total {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  body {
+    height: 100vmax;
+    overflow: scroll;
+  }
+
+  body .overlay {
+    height: 100vmax !important;
+  }
+
+  .header {
+    flex-direction: column;
+  }
+
+  .weather-body {
+    flex-direction: column-reverse;
+  }
+
+  .time {
+    display: none;
+  }
+
+  .weather-temperature {
+    margin-left: 0;
+  }
+
+  .wind, .humid {
+    text-align: center;
+  }
+
+  .card-body-footer {
+    display: block;
+  }
+  
+}
+
+@media screen and (max-width: 420px) {
+  .container-total {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 25px;
+  };
+
+  form {
+    display: block;
+  }
+  form {
+    display: block;
+  }
+
+  #searchCity {
+    padding: 6px;
+    margin-bottom: 7px;
+    width: 100%;
+  }
+
+  #btn {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 361px) {
+  .container-total {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 290px) {
+  h1 {
+    font-size: 20px;
+  }
+}
+

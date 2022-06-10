@@ -22,15 +22,15 @@ export default function WeatherInfo(props) {
                 <p>{props.data.description}</p>
             </div>
             <WeatherTemperature celsius={props.data.temperature} />
-            <div className="weather-temperature">
-              {/* <span className="current-temperature">
+            {/* <div className="weather-temperature">
+              { <span className="current-temperature">
                 {props.data.temperature}
               </span>
               <span id="btn-group">
                 <button className="deg active">°C</button>
                 {/* <button className="far">°F</button> /}
-              </span> */}
-            </div>
+              </span> }
+            </div> */}
         </div>
     )
 }
